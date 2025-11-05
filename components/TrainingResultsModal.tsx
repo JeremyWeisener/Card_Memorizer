@@ -18,7 +18,7 @@ const TrainingResultsModal = (props: TrainingResultsModalProps) => {
 
     const { GAP_SIZE, NUM_COLUMNS, CARD_WIDTH, CONTAINER_PADDING } = useMemo(() => {
         const deviceWidth = Dimensions.get("window").width;
-        const NUM_COLUMNS = props.missedCards.length > 3 ? 4 : props.missedCards.length;
+        const NUM_COLUMNS = (props.missedCards.length > 3 ? 4 : 2);
         const GAP_SIZE = 4;
         const TOTAL_GAP_SPACE = NUM_COLUMNS * GAP_SIZE;
         const CONTAINER_PADDING = 13;
