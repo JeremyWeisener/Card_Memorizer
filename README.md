@@ -61,28 +61,35 @@ modal component.
 ## How to run
 
 1. Clone it onto your local machine.
-   (https) `git clone https://github.com/JeremyWeisener/Card_Memorizer.git`
-   --or--
-   (ssh) `git clone git@github.com:JeremyWeisener/Card_Memorizer.git`
+
+    (https) `git clone https://github.com/JeremyWeisener/Card_Memorizer.git`
+
+    --or--
+
+    (ssh) `git clone git@github.com:JeremyWeisener/Card_Memorizer.git`
+
 2. Move into directory
    `cd ./Card_Memorizer`
 3. Install package
    `npm install`
 4. Run the project
 
-- For use w/ Expo Go App
-  [Expo Go (Play Store)](https://play.google.com/store/apps/details?id=host.exp.exponent)
-  --or--
-  [Expo Go (App Store)](https://apps.apple.com/us/app/expo-go/id982107779)
-  - Unfortunately not possible because Realm requires packages that don't come
-      with the default Expo Go app. A custom dev build will need to be created.
+### For use w/ Expo Go App
 
-- For custom dev build (Android) **Required: Developer Options enabled / adb installed**
-  - Enable Developer options by going to `Settings > About Phone` and tap on
-      `Build Number` 7 times.
-  - Go to `Settings > Developer options` and enable USB Debugging
-  - Install `adb` -- this varies depending on OS so follow any instructions for
-      your specific desktop OS.
+[Expo Go (Play Store)](https://play.google.com/store/apps/details?id=host.exp.exponent)
+or
+[Expo Go (App Store)](https://apps.apple.com/us/app/expo-go/id982107779)
+
+- Unfortunately not possible because Realm requires packages that don't come
+  with the default Expo Go app. A custom dev build will need to be created.
+
+### For custom dev build (Android) **Required: Developer Options enabled / adb installed**
+
+- Enable Developer options by going to `Settings > About Phone` and tap on
+  `Build Number` 7 times.
+- Go to `Settings > Developer options` and enable USB Debugging
+- Install `adb` -- this varies depending on OS so follow any instructions for
+  your specific desktop OS.
 
 ```
 npx expo prebuild --platform android
@@ -91,18 +98,22 @@ cd android
 adb install ./app/build/outputs/apk/debug/app-debug.apk
 ```
 
-- If you do not have permissions for the `adb install` command...
-    1. Revoke permissions in Developer Options (on device)
-    2. Say yes to prompt on the phone to give permissions
-    3. Rerun the command
+_If you do not have permissions for the `adb install` command_
 
-- Build apk
-  - `eas build -p android --profile preview`
-  - Login to EAS
-  - Follow prompts
+1. Revoke permissions in Developer Options (on device)
+2. Say yes to prompt on the phone to give permissions
+3. Rerun the command
 
-- For use on Android Emulator **Required: Android Emulator already setup**
-  - `npx expo run:android`
+### Build apk
 
-- For use on iOS Emulator **Required: iOS Emulator already setup**
-  - `npx expo run:ios`
+- `eas build -p android --profile preview`
+- Login to EAS
+- Follow prompts
+
+### For use on Android Emulator **Required: Android Emulator already setup**
+
+- `npx expo run:android`
+
+### For use on iOS Emulator **Required: iOS Emulator already setup**
+
+- `npx expo run:ios`
