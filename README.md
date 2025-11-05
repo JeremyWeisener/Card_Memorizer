@@ -3,6 +3,16 @@
 A React Native project made using Expo to assist in the training of the memory
 technique to identify missing cards from The Memory Book.
 
+## Gameplay
+Training             |  Play
+:-------------------------:|:-------------------------:
+![](https://github.com/JeremyWeisener/Card_Memorizer/blob/main/gameplay/gifs/Training.gif)|![](https://github.com/JeremyWeisener/Card_Memorizer/blob/main/gameplay/gifs/Play.gif)
+
+
+Custom Decks             |  Delete Decks             | Rename Decks              | Rename Cards
+:-------------------------:|:-------------------------:|:-------------------------:|:-------------------------:
+![](https://github.com/JeremyWeisener/Card_Memorizer/blob/main/gameplay/gifs/TrainingMenu_NewDeck.gif)|![](https://github.com/JeremyWeisener/Card_Memorizer/blob/main/gameplay/gifs/TrainingMenu_Delete.gif)|![](https://github.com/JeremyWeisener/Card_Memorizer/blob/main/gameplay/gifs/TrainingMenu_RenameDeck.gif)|![](https://github.com/JeremyWeisener/Card_Memorizer/blob/main/gameplay/gifs/TrainingMenu_RenameCard.gif)
+
 ## Technologies
 
 `React Native` the primary framework used for it's versatility and ability to
@@ -135,3 +145,10 @@ _If you do not have permissions for the `adb install` command_
 *Required: iOS Emulator already setup*
 
 - `npx expo run:ios`
+
+
+## ToDo
+- [ ] Store training data to identify cards difficult to remember.
+- [ ] Add more feedback on press for icons, cards, etc. Using TouchableOpacity would be a simple solution.
+- [ ] Give more feedback on swipe up/down in training to indicate success or failure for card.
+- [ ] Transition to more atomic component creation.
