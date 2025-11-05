@@ -1,50 +1,108 @@
-# Welcome to your Expo app 👋
+# Card Memorizer
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A React Native project made using Expo to assist in the training of the memory
+technique to identify missing cards from The Memory Book.
 
-## Get started
+## Technologies
 
-1. Install dependencies
+`React Native` the primary framework used for it's versatility and ability to
+build to multiple platforms.
+`Expo` the meta framework used to quickly get to a solid working point.
+`Realm` used for storing decks and mnemonic devices associated with them.
+`React Native Reanimated` used to handle animations.
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+- Custom Deck building for training.
+  - Rename existing decks
+  - Delete decks
+- Training
+  - Practice with custom decks using user chosen words for mnemonic devices
+  - Shuffle Deck
+  - Clear current training sessions
+  - Monitor practice training progress
+- Play
+  - Remove `x` number of cards from the deck.
+  - Select missing cards at the end of training and compare against actually removed
 
-   ```bash
-   npx expo start
-   ```
+## Lessons Learned
 
-In the output, you'll find options to open the app in a
+### useReducer
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+useReducer was helpful in training mode to manage the different actions
+that can be performed on the active deck and reduce code bloat in the training page.
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+### useContext
 
-## Get a fresh project
+useContext helped pass a standard theme to multiple components with only
+a single line for each component while being performant.
 
-When you're ready, run:
+### useEffect
 
-```bash
-npm run reset-project
+I learned about the different ways useEffect can be used to ensure aspects of
+components are updated at the right time.
+
+### Memo / useMemo / useCallback
+
+Memoization was helpful for reducing unnecessary re-renders on heavy or
+repetitive computations.
+
+### Component Management
+
+In hindsight I wish I had implemented a more atomic folder structure from the
+start to help manage reused components and simplify creating new components.
+
+### React Native Reanimated
+
+The new React Native Reanimated was nice to use and was a fun challenge to
+implement the card swipe animation and using it for easily creating an animated
+modal component.
+
+## How to run
+
+1. Clone it onto your local machine.
+   (https) `git clone https://github.com/JeremyWeisener/Card_Memorizer.git`
+   --or--
+   (ssh) `git clone git@github.com:JeremyWeisener/Card_Memorizer.git`
+2. Move into directory
+   `cd ./Card_Memorizer`
+3. Install package
+   `npm install`
+4. Run the project
+
+- For use w/ Expo Go App
+  [Expo Go (Play Store)](https://play.google.com/store/apps/details?id=host.exp.exponent)
+  --or--
+  [Expo Go (App Store)](https://apps.apple.com/us/app/expo-go/id982107779)
+  - Unfortunately not possible because Realm requires packages that don't come
+      with the default Expo Go app. A custom dev build will need to be created.
+
+- For custom dev build (Android) **Required: Developer Options enabled / adb installed**
+  - Enable Developer options by going to `Settings > About Phone` and tap on
+      `Build Number` 7 times.
+  - Go to `Settings > Developer options` and enable USB Debugging
+  - Install `adb` -- this varies depending on OS so follow any instructions for
+      your specific desktop OS.
+
+```
+npx expo prebuild --platform android
+cd android
+./gradlew.bat assembleDebug
+adb install ./app/build/outputs/apk/debug/app-debug.apk
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+- If you do not have permissions for the `adb install` command...
+    1. Revoke permissions in Developer Options (on device)
+    2. Say yes to prompt on the phone to give permissions
+    3. Rerun the command
 
-## Learn more
+- Build apk
+  - `eas build -p android --profile preview`
+  - Login to EAS
+  - Follow prompts
 
-To learn more about developing your project with Expo, look at the following resources:
+- For use on Android Emulator **Required: Android Emulator already setup**
+  - `npx expo run:android`
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- For use on iOS Emulator **Required: iOS Emulator already setup**
+  - `npx expo run:ios`

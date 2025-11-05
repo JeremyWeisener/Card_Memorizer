@@ -1,6 +1,5 @@
 import React, { FC, ReactNode } from "react";
 import { Dimensions, StyleProp, View, ViewStyle } from "react-native";
-// Updated imports: Using GestureDetector and Gesture from the modern gesture handler API
 import { Gesture, GestureDetector } from "react-native-gesture-handler";
 import Animated, {
     AnimatedStyle,

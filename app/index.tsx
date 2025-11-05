@@ -16,7 +16,7 @@ const Index = () => {
                 data={[
                     { label: "Play", value: "play" },
                     { label: "Training", value: "trainingMenu" },
-                    { label: "Info", value: "info" }
+                    { label: "How to Play", value: "howTo" }
                 ]}
                 keyExtractor={item => item.value}
                 renderItem={({ item }: { item: { label: string, value: string } }) => (

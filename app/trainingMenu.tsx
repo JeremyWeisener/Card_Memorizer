@@ -41,7 +41,6 @@ const Training = () => {
     const [newDeckModalVisible, setNewDeckModalVisible] = useState(false);
     const [showRenameDeckModal, setShowRenameDeckModal] = useState(false);
     const [showConfirmationModal, setShowConfirmationModal] = useState(false);
-    const [newDeckName, setNewDeckName] = useState("");
 
     const [showRenameCardModal, setShowRenameCardModal] = useState(false);
 
@@ -104,13 +103,12 @@ const Training = () => {
         }
     };
 
-    const createNewDeck = () => {
+    const createNewDeck = (newDeckName: string) => {
         const res = realmService.addDeck(realm, newDeckName);
         if (res) {
             setNewDeckModalVisible(false);
             findAndSetDeck(newDeckName);
             getAvailableDecks();
-            setNewDeckName("");
             Toast.show({
                 type: "success",
                 text1: "Created Deck",
@@ -228,20 +226,22 @@ const Training = () => {
                 />
             </SafeAreaView>
 
-            <CreateNewDeckModal
-                visible={newDeckModalVisible}
-                text={newDeckName}
-                onPress={() => {
-                    createNewDeck();
-                }}
-                onChange={(v) => setNewDeckName(v)}
-                onClose={() => setNewDeckModalVisible(false)}
-            />
             <ConfirmationModal
                 visible={showConfirmationModal}
                 dismissText="Delete"
                 onDismiss={() => { setShowConfirmationModal(false) }}
                 onConfirm={deleteActiveDeck}
+            />
+
+            <RenameModal
+                visible={newDeckModalVisible}
+                onDismiss={() => setNewDeckModalVisible(false)}
+                value={""}
+                actionText="Create"
+                onSubmit={(s) => createNewDeck(s)}
+                header={(
+                    <Text style={{ fontSize: 24, marginBottom: 10, textAlign: 'center', color: secondary }}>Create New Deck</Text>
+                )}
             />
 
             <RenameModal

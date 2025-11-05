@@ -74,80 +74,10 @@ export default function RootLayout() {
                                     },
                                     headerShown: true,
                                 }} />
-                            {/* <Stack.Screen 
-                name="settings"
-                options={{
-                  title: "Settings",
-                  headerTintColor:secondary,
-                  headerStyle: {
-                    backgroundColor: primary
-                  },
-                  headerTitleStyle: {
-                    fontSize: 24,
-                    color: secondary
-                  },
-                  headerShown: true,
-                }} /> */}
                             <Stack.Screen
-                                name="leaderboard"
+                                name="howTo"
                                 options={{
-                                    title: "Leaderboard",
-                                    headerTintColor: secondary,
-                                    headerStyle: {
-                                        backgroundColor: primary
-                                    },
-                                    headerTitleStyle: {
-                                        fontSize: 24,
-                                        color: secondary
-                                    },
-                                    headerShown: true,
-                                }} />
-                            <Stack.Screen
-                                name="results"
-                                options={{
-                                    title: "Results",
-                                    headerTintColor: secondary,
-                                    headerStyle: {
-                                        backgroundColor: primary
-                                    },
-                                    headerTitleStyle: {
-                                        fontSize: 24,
-                                        color: secondary
-                                    },
-                                    headerShown: true,
-                                }} />
-                            <Stack.Screen
-                                name="selectMode"
-                                options={{
-                                    title: "Select Mode",
-                                    headerTintColor: secondary,
-                                    headerStyle: {
-                                        backgroundColor: primary
-                                    },
-                                    headerTitleStyle: {
-                                        fontSize: 24,
-                                        color: secondary
-                                    },
-                                    headerShown: true,
-                                }} />
-                            <Stack.Screen
-                                name="customize"
-                                options={{
-                                    title: "Custom",
-                                    headerTintColor: secondary,
-                                    headerStyle: {
-                                        backgroundColor: primary
-                                    },
-                                    headerTitleStyle: {
-                                        fontSize: 24,
-                                        color: secondary
-                                    },
-                                    headerShown: true,
-                                }} />
-                            <Stack.Screen
-                                name="info"
-                                options={{
-                                    title: "Info",
+                                    title: "How To Play",
                                     headerTintColor: secondary,
                                     headerStyle: {
                                         backgroundColor: primary

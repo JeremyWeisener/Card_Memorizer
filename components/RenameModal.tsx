@@ -9,6 +9,7 @@ interface RenameModalProps extends ModalProps {
     header?: React.ReactNode;
     onSubmit: (s: string) => void;
     value: string | undefined,
+    actionText?: string;
 }
 
 const RenameModal = (props: RenameModalProps) => {
@@ -54,7 +55,7 @@ const RenameModal = (props: RenameModalProps) => {
                                 keyboardType="default"
                             />
                             <OutlineButton
-                                text="Rename"
+                                text={props.actionText || "Rename"}
                                 color="white"
                                 onPress={submit}
                                 buttonStyle={[
