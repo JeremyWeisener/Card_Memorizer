@@ -7,17 +7,19 @@ technique to identify missing cards from The Memory Book.
 
 `React Native` the primary framework used for it's versatility and ability to
 build to multiple platforms.
+
 `Expo` the meta framework used to quickly get to a solid working point.
-`Realm` used for storing decks and mnemonic devices associated with them.
+
 `React Native Reanimated` used to handle animations.
+
+`Realm` used for storing decks and mnemonic devices associated with them.
 
 ## Features
 
-- Custom Deck building for training.
-  - Rename existing decks
-  - Delete decks
 - Training
   - Practice with custom decks using user chosen words for mnemonic devices
+     - Rename custom decks
+     - Delete custom decks
   - Shuffle Deck
   - Clear current training sessions
   - Monitor practice training progress
@@ -74,6 +76,20 @@ modal component.
    `npm install`
 4. Run the project
 
+HTTPS
+```
+git clone https://github.com/JeremyWeisener/Card_Memorizer.git
+cd ./Card_Memorizer
+npm install
+```
+
+SSH
+```
+git clone git@github.com:JeremyWeisener/Card_Memorizer.git
+cd ./Card_Memorizer
+npm install
+```
+
 ### For use w/ Expo Go App
 
 [Expo Go (Play Store)](https://play.google.com/store/apps/details?id=host.exp.exponent)
@@ -110,10 +126,12 @@ _If you do not have permissions for the `adb install` command_
 - Login to EAS
 - Follow prompts
 
-### For use on Android Emulator **Required: Android Emulator already setup**
+### Android Emulator 
+*Required: Android Emulator already setup*
 
 - `npx expo run:android`
 
-### For use on iOS Emulator **Required: iOS Emulator already setup**
+### iOS Emulator 
+*Required: iOS Emulator already setup*
 
 - `npx expo run:ios`
